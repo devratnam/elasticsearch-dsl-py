@@ -218,8 +218,6 @@ class DslBase(object):
     def __init__(self, _expand__to_dot=EXPAND__TO_DOT, **params):
         self._params = {}
         for pname, pvalue in iteritems(params):
-            if '__' in pname and _expand__to_dot:
-                pname = pname.replace('__', '.')
             self._setattr(pname, pvalue)
 
     def _repr_params(self):
